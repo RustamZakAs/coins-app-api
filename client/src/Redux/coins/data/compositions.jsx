@@ -1,0 +1,35 @@
+const compositionsData = JSON.parse(`
+[
+    {
+       "id":"1",
+       "nameAz":"Nikel",
+       "nameEn":"Nickel",
+       "nameRu":"Никель"
+    },
+    {
+       "id":"2",
+       "nameAz":"Qızıl",
+       "nameEn":"Gold",
+       "nameRu":"Золото"
+    },
+    {
+       "id":"3",
+       "nameAz":"Polad",
+       "nameEn":"Steel",
+       "nameRu":"Сталь"
+    },
+    {
+       "id":"4",
+       "nameAz":"Gümüş",
+       "nameEn":"Silver",
+       "nameRu":"Серебро"
+    },
+    {
+       "id":"5",
+       "nameAz":"Kağız",
+       "nameEn":"Paper",
+       "nameRu":"Бумага"
+    }
+ ]
+`);
+export default compositionsData;

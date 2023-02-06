@@ -64,27 +64,36 @@ function AdvancedFilter() {
                 <select name='country'>
                     <option value=""></option>
                     {
-                        countries?.map((item, index) => (
-                            <option key={index} value={item.id}>{item.nameAz}</option>
-                        ))
+                        countries?.length > 0 ?
+                        (
+                            countries?.map((item, index) => (
+                                <option key={index} value={item.id}>{item.nameAz}</option>
+                            ))
+                        ) : ""
                     }
                 </select>
                 <label className='advanced-search-text'>Metal</label>
                 <select name="composition">
                     <option value=""></option>
                     {
-                        compositions?.map((item, index) => (
-                            <option key={index} value={item.id}>{item.nameAz}</option>
-                        ))
+                        compositions?.length > 0 ?
+                        (
+                            compositions?.map((item, index) => (
+                                <option key={index} value={item.id}>{item.nameAz}</option>
+                            ))
+                        ) : ""
                     }
                 </select>
                 <label className='advanced-search-text'>Quality of the coin</label>
                 <select name='quality'>
                     <option value=""></option>
                     {
-                        typesofquality?.map((item, index) => (
-                            <option key={index} value={item.id}>{item.nameAz}</option>
-                        ))
+                        typesofquality?.length > 0 ?
+                        (
+                            typesofquality?.map((item, index) => (
+                                <option key={index} value={item.id}>{item.nameAz}</option>
+                            ))
+                        ) : ""
                     }
                 </select>
             </div>

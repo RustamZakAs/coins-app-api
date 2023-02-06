@@ -12,6 +12,4 @@ export const getAvtorizedSelector = store => store.catalogReducer.avtorized;
 
 export const getCategoriesImagesSelector = store => store.catalogReducer.categoriesImages;
 
-//export const getCoinSelector = store => store.catalogReducer.catalog;
-
 export const getCoinSelector = (store, id) => createSelector(postSelector, store => store.catalogReducer.catalog.filter(x => x.id === id))

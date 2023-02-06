@@ -45,10 +45,13 @@ const Categories = () => {
     }, [])
 
     return (
-        <div className='categories'>
-            {categories?.map((item, index) => (
-                <Category key={item.id} {...item} image={images[index]?.image} />
-            ))}
+        <div className="categories">
+            {
+                categories?.length > 0 ?
+                (categories?.map((item, index) => (
+                    <Category key={item?.id} {...item} image={images[index]?.image} />
+                ))) : ""
+            }
         </div>
     )
 }
