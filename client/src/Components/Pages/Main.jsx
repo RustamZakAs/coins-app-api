@@ -2,10 +2,10 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Categories from './Categories';
 import Catalog from './Catalog';
-import CatalogItem from './CatalogItem';
+import CatalogItem from '../CatalogItem';
 import Admin from './Admin';
-import Slider from './Slider';
-import EditItem from './EditItem';
+import Slider from '../Slider';
+import EditItem from '../EditItem';
 
 export default function Main() {
     return (

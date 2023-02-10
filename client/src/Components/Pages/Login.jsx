@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
 import { useDispatch } from 'react-redux';
-import { setAvtorizedAction } from '../Redux/coins/actions';
+import { setAvtorizedAction } from '../../Redux/coins/actions';
 
 function Login() {
   const navigate = useNavigate();

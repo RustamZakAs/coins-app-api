@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from "react-router-dom";
 
-import Coin from './Coin';
+import Coin from '../Coin';
 
 import { useDispatch } from 'react-redux';
-import { setCatalogAction, setImagesAction } from '../Redux/coins/actions';
+import { setCatalogAction, setImagesAction } from '../../Redux/coins/actions';
 import { useSelector } from 'react-redux';
-import { getCatalogSelector, getImagesSelector } from '../Redux/coins/selectors';
+import { getCatalogSelector, getImagesSelector } from '../../Redux/coins/selectors';
 
 const Catalog = () => {
     let { id } = useParams();

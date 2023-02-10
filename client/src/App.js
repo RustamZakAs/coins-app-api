@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Provider } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header.jsx";
-import Main from "./Components/Main.jsx";
+import Main from "./Components/Pages/Main.jsx";
 import Footer from "./Components/Footer.jsx";
-import Login from "./Components/Login.jsx";
+import Login from "./Components/Pages/Login.jsx";
 
 import store from "./Redux/store";
 

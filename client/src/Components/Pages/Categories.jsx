@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 
-import Category from './Category';
+import Category from '../Category';
 
 import { useDispatch } from 'react-redux';
-import { setCategoriesAction, setCategoriesImagesAction } from '../Redux/coins/actions';
+import { setCategoriesAction, setCategoriesImagesAction } from '../../Redux/coins/actions';
 
 import { useSelector } from 'react-redux';
-import { getCategoriesSelector, getCategoriesImagesSelector } from '../Redux/coins/selectors';
+import { getCategoriesSelector, getCategoriesImagesSelector } from '../../Redux/coins/selectors';
 
 const Categories = () => {
     const dispatch = useDispatch();

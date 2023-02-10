@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from "react-router-dom";
 
-import CoinItem from './CoinItem';
+import CoinItem from '../CoinItem';
 
 import { useDispatch } from 'react-redux';
-import { setCatalogAction, setImagesAction } from '../Redux/coins/actions';
+import { setCatalogAction, setImagesAction } from '../../Redux/coins/actions';
 
 function Admin() {
     const dispatch = useDispatch();
