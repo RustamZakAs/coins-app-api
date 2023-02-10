@@ -13,12 +13,14 @@ const Coin = ({ id, type, name, shortDescription, image }) => {
   const link = `/catalogitem/${id}`;
 
   return (
-    <div className='coin_card'>
-      <Link to={link}>
-        <p className='category_card__name'>{name}</p>
-      </Link>
-        <p>{shortDescription ?? ""}</p>
-        <img className='category-image coin' src={`data:image/${type ?? 'jpeg'};base64,${image ? image : emptyImage}`} />
+    <div className='coin-card'>
+      <div>
+        <Link to={link}>
+          <p className='category_card__name'>{name}</p>
+        </Link>
+        <p className='coin-card-text'>{shortDescription ?? ""}</p>
+      </div>
+      <img className='category-image coin' src={`data:image/${type ?? 'jpeg'};base64,${image ? image : emptyImage}`} />
     </div>
   )
 }

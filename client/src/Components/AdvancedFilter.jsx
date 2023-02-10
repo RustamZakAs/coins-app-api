@@ -101,16 +101,16 @@ function AdvancedFilter() {
                 <label className='advanced-search-text'>Price</label>
                 <div>
                     <span>from</span>
-                    <input type="number" placeholder='min' name="minPrice"></input>
+                    <input type="number" placeholder='min' name="minPrice" min={0} max={1000000000}></input>
                     <span>to</span>
-                    <input type="number" placeholder='max' name="maxPrice"></input>
+                    <input type="number" placeholder='max' name="maxPrice" min={0} max={1000000000}></input>
                 </div>
                 <label className='advanced-search-text'>Year of issue</label>
                 <div>
                     <span>from</span>
-                    <input type="number" placeholder='year' name="minYear"></input>
+                    <input type="number" placeholder='year' name="minYear" min={0} max={new Date().getFullYear()}></input>
                     <span>to</span>
-                    <input type="number" placeholder='year' name="maxYear"></input>
+                    <input type="number" placeholder='year' name="maxYear" min={0} max={new Date().getFullYear()}></input>
                 </div>
             </div>
         </div>

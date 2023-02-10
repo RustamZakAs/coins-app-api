@@ -4,6 +4,7 @@ export const getImagesSelector = store => store.catalogReducer.images;
 export const getEmptyImageSelector = store => store.catalogReducer.emptyImage;
 
 export const getCategoriesSelector = store => store.catalogReducer.categories;
+export const getCharacteristicsSelector = store => store.catalogReducer.characteristics;
 export const getCompositionsSelector = store => store.catalogReducer.compositions;
 export const getTypesOfQualitySelector = store => store.catalogReducer.typesofquality;
 export const getCountriesSelector = store => store.catalogReducer.countries;

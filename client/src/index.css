@@ -3,11 +3,16 @@
 :root {
   --main-color: #aa77ee;
   --second-color: #5a2d95;
+  --table-second-color: #959595;
 }
 
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  min-height: 100vh;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -55,7 +60,7 @@ input[type=number] {
 }
 
 .main {
-  min-height: 60vh;
+  min-height: 75vh;
   padding: 15px;
   position: relative;
 }
@@ -141,6 +146,10 @@ button span {
   color: #ffffff;
 }
 
+.margin {
+  margin-left: 10px;
+}
+
 button:hover {
   background: var(--second-color);
   transition: 2s;
@@ -188,8 +197,18 @@ button:hover {
   gap: 5px;
 }
 
-.coin_card {
+.coin-card {
   width: 24%;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.coin-card-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 50px;
 }
 
 img {
@@ -236,6 +255,9 @@ img.coin {
   font-style: normal;
   font-weight: 300;
   font-size: 20px;
+  padding: 5px;
+
+  border-radius: 10px;
 }
 
 .advanced-search input {
@@ -245,6 +267,9 @@ img.coin {
   height: 48px;
 
   border: 1px solid #000000;
+  padding: 5px;
+
+  border-radius: 10px;
 }
 
 .advanced-col {
@@ -296,11 +321,11 @@ img.coin {
 }
 
 .catalog-item tr:nth-child(2n -1) {
-  background-color: #aa77ee;
+  background-color: var(--main-color);
 }
 
 .catalog-item tr:nth-child(2n) {
-  background-color: #959595;
+  background-color: var(--table-second-color);
 }
 
 .login-form {
@@ -364,4 +389,12 @@ hr {
 .edititem-row {
   display: flex;
   flex-direction: row;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
 }

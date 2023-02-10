@@ -1,22 +1,34 @@
 import React, { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
-import { getEmptyImageSelector } from '../Redux/coins/selectors';
-import { Link } from 'react-router-dom';
+import { getEmptyImageSelector, getCharacteristicsSelector } from '../Redux/coins/selectors';
 
-function CatalogItem({ id, nameAz, nameEn, nameRu, shortDescription, description, image, type }) {
+function CatalogItem({ nameAz, nameEn, nameRu, countryId, shortDescription, description, type }) {
     let [emptyImage, setEmptyImage] = useState("");
+    let [characteristics, setCharacteristics] = useState({});
+    let [images, setImages] = useState([]);
 
-    const data = useSelector(getEmptyImageSelector);
-    emptyImage = data;
+    const { id } = useParams();
+
+    emptyImage = useSelector(getEmptyImageSelector);
+    characteristics = useSelector(store => store.catalogReducer.characteristics.find(x => x.coinId == id));
+    images = useSelector(store => store.catalogReducer.images.filter(x => x.catalogId == id));
 
     return (
         <>
-            <div>CatalogItem</div>
+            {/* <div>CatalogItem</div> */}
             <div className='catalog-item'>
                 <div>
-                    <img className='category-image coin' src={`data:image/${type ?? 'jpeg'};base64,${image ? image : emptyImage}`} />
-                    <img className='category-image coin' src={`data:image/${type ?? 'jpeg'};base64,${image ? image : emptyImage}`} />
+                    {
+                        images?.length > 0 ?
+                            (
+                                images?.map((item, index) => (
+                                    <img className='category-image coin' src={`data:image/${item.type ?? 'jpeg'};base64,${item.image ? item.image : emptyImage}`} />
+                                ))
+                            )
+                            : ""
+                    }
                 </div>
                 <div className='catalog-item-info'>
                     <p>{nameAz ?? ""}</p>
@@ -28,27 +40,27 @@ function CatalogItem({ id, nameAz, nameEn, nameRu, shortDescription, description
                         <tbody>
                             <tr>
                                 <td>Issuing Country</td>
-                                <td>Azerbaijan</td>
+                                <td>{countryId ?? ""}</td>
                             </tr>
                             <tr>
                                 <td>Composition</td>
-                                <td></td>
+                                <td>{characteristics?.compositionId ?? ""}</td>
                             </tr>
                             <tr>
                                 <td>Quality</td>
-                                <td></td>
+                                <td>{characteristics?.qualityId ?? ""}</td>
                             </tr>
                             <tr>
                                 <td>Denomination</td>
-                                <td></td>
+                                <td>{characteristics?.denomination ?? ""}</td>
                             </tr>
                             <tr>
                                 <td>Year</td>
-                                <td></td>
+                                <td>{characteristics?.fromYear ?? ""}-{characteristics?.toYear ?? ""}</td>
                             </tr>
                             <tr>
                                 <td>Weight</td>
-                                <td></td>
+                                <td>{characteristics?.weight ?? ""}</td>
                             </tr>
                             <tr>
                                 <td>Price</td>
@@ -56,15 +68,15 @@ function CatalogItem({ id, nameAz, nameEn, nameRu, shortDescription, description
                             </tr>
                             <tr>
                                 <td>Width</td>
-                                <td></td>
+                                <td>{characteristics?.width ?? ""}</td>
                             </tr>
                             <tr>
                                 <td>Height</td>
-                                <td></td>
+                                <td>{characteristics?.height ?? ""}</td>
                             </tr>
                             <tr>
                                 <td>Thickness</td>
-                                <td></td>
+                                <td>{characteristics?.thickness ?? ""}</td>
                             </tr>
                         </tbody>
                     </table>

@@ -91,6 +91,13 @@ const catalogReducer = (state = initialState, action) => {
       return state.categories;
       break;
 
+    case SET_CHARACTERISTICS:
+      return { ...state, characteristics: action.payload };
+      break;
+    case GET_CHARACTERISTICS:
+      return state.characteristics;
+      break;
+
     case SET_COMPOSITIONS:
       return { ...state, compositions: action.payload };
       break;

@@ -14,6 +14,7 @@ export default function Filter() {
       //console.log(`${key}: ${value}`);
     }
   }
+  
   const clickAdvanced = (e) => {
     setIsAdvanced(!isAdvanced);
     setUpDownIndex(upDownIndex === 1 ? 0 : 1);
@@ -22,9 +23,9 @@ export default function Filter() {
   return (
     <form onSubmit={onSubmit}>
       <p className='search' for="search">Searched text</p>
-      <div>
+      <div className='search-form'>
         <input className='search' placeholder='Searched text' name="text"></input>
-        <button className='search'><span>Search</span></button>
+        <button className='search margin'><span>Search</span></button>
       </div>
       <p className='advanced-search-click' onClick={clickAdvanced}>Advanced filler {upDown[upDownIndex]}</p>
       {isAdvanced ? <AdvancedFilter /> : ""}

@@ -90,7 +90,7 @@ function EditItem({ type }) {
         <form className='edititem' onSubmit={onSaveSubmit}>
             <div className='edititem-col'>
                 <label className='advanced-search-text'>Coin name</label>
-                <input type='text' name="name" value={coin?.name}></input>
+                <input type='text' name="name" value={coin?.name ? "" : coin?.name}></input>
 
                 <label className='advanced-search-text'>Face value</label>
                 <input type='text' name='facevalue'></input>
@@ -102,7 +102,7 @@ function EditItem({ type }) {
                 <input type='number' name='price'></input>
 
                 <label className='advanced-search-text'>Country</label>
-                <select name='country' value={coin?.countryId}>
+                <select name='country' value={coin?.countryId ? "" : coin?.countryId}>
                     <option value=""></option>
                     {
                         countries?.length > 0 ?
@@ -129,10 +129,10 @@ function EditItem({ type }) {
             </div>
             <div className='edititem-col'>
                 <label className='advanced-search-text'>Short description</label>
-                <textarea name="shortDescription" rows="4" value={coin?.shortDescription}></textarea>
+                <textarea name="shortDescription" rows="4" value={coin?.shortDescription ? "" : coin?.shortDescription}></textarea>
 
                 <label className='advanced-search-text'>Long description</label>
-                <textarea name="longDescription" rows="4" value={coin?.description}></textarea>
+                <textarea name="longDescription" rows="4" value={coin?.description ? "" : coin?.description}></textarea>
 
                 <label className='advanced-search-text'>Quality of the coin</label>
                 <select name='quality'>
