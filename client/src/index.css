@@ -167,6 +167,24 @@ button:hover {
   width: 25%;
 }
 
+@media (max-width: 845px) {
+  .category_card {
+    width: 33%;
+  }
+}
+
+@media (max-width: 645px) {
+  .category_card {
+    width: 50%;
+  }
+}
+
+@media (max-width: 437px) {
+  .category_card {
+    width: 100%;
+  }
+}
+
 .category-image {
   width: 200px;
 }
